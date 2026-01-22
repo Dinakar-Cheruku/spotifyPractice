@@ -33,6 +33,23 @@ fact_genre.insert(9,"danceability",np.where(fact_genre['avg_danceability']>=0.7,
 
 fact_genre['explicit_rate'] = (fact_genre['explicit_rate'] * 100).round(2)
 
+# df['genre_class'] = np.where(
+#     df['avg_popularity'] >= 80,
+#     'Super Popular',                 # if
+#     np.where(
+#         df['avg_popularity'] >= 60,
+#         'Popular',                    # elif
+#         np.where(
+#             df['avg_popularity'] >= 40,
+#             'Medium',                 # elif
+#             np.where(
+#                 df['avg_popularity'] >= 20,
+#                 'Low',                # elif
+#                 'Very Low'            # else
+#             )
+#         )
+#     )
+# )
 
 print(fact_genre.head())
 
