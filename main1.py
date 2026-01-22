@@ -7,7 +7,6 @@
 
 import pandas as pd
 
-import numpy as np
 
 #git sucks
 df = pd.read_csv('data/dataset.csv')
@@ -42,15 +41,15 @@ df = pd.read_csv('data/dataset.csv')
 
 dim_genre = df.groupby('track_genre').agg({
     'track_id' : 'count',
-    'popularity' : 'mean',
-    'duration_ms' : 'mean',
-    'valence' : 'mean',
-    'loudness' : 'mean',
-    'danceability' : 'mean',
+    # 'popularity' : 'mean',
+    # 'duration_ms' : 'mean',
+    # 'valence' : 'mean',
+    # 'loudness' : 'mean',
+    # 'danceability' : 'mean',
 }).round(2).reset_index()
 
 
-dim_genre.columns = ['genre','no_of_tracks','avg_popularity','avg_duration_ms','avg_valence','avg_loudness','avg_danceability']
+dim_genre.columns = ['genre','no_of_tracks']
 dim_genre.insert(0, 'genre_id', dim_genre.index + 1)
 # print(dim_genre['genre'].is_unique)  #this should return true
 dim_genre.drop_duplicates()
