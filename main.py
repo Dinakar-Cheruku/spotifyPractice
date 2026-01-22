@@ -42,3 +42,30 @@
 # fact_tracks.to_csv('fact_tracks.csv', index=False)
 #
 # print(dim_genre.head(10))
+import pandas as pd
+
+import numpy as np
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
