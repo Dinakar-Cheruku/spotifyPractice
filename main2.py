@@ -16,6 +16,7 @@ dim_genre_profile = (
       .reset_index()
       .rename(columns={'track_genre': 'genre'})
 )
+print(dim_genre_profile.head())
 dim_genre_profile.insert(0, 'genre_id', dim_genre_profile.index+1)
 
 # print(list(dim_genre_profile.columns))
@@ -23,7 +24,7 @@ dim_genre_profile.insert(0, 'genre_id', dim_genre_profile.index+1)
 fact_genre = dim_genre_profile.merge(dim_genre, on=['genre_id','genre'],how='inner')
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
-print(fact_genre.describe())
+# print(fact_genre.describe())
 
 fact_genre.insert(2,"popularity_desc",np.where(fact_genre['avg_popularity']>=50,'heavily popular genre','just another genre'))
 
@@ -51,7 +52,7 @@ fact_genre['explicit_rate'] = (fact_genre['explicit_rate'] * 100).round(2)
 #     )
 # )
 
-print(fact_genre.head())
+# print(fact_genre.head())
 
 
 

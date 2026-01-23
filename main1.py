@@ -1,4 +1,6 @@
 # # Add popularity tier (numpy binning)
+
+
 # dim_genre['popularity_tier'] = pd.cut(
 #     dim_genre['avg_popularity'],
 #     bins=[0, 33, 66, 100],
@@ -52,7 +54,7 @@ dim_genre = df.groupby('track_genre').agg({
 dim_genre.columns = ['genre','no_of_tracks']
 dim_genre.insert(0, 'genre_id', dim_genre.index + 1)
 # print(dim_genre['genre'].is_unique)  #this should return true
-dim_genre.drop_duplicates()
+# dim_genre.drop_duplicates()
 dim_genre.to_csv('data/dim_genre.csv', index=False)
 
 
